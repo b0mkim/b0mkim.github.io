@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bom Kim — CV</title>
+  <style>
+    :root { --fg:#111; --muted:#555; --bg:#fff; --line:#e9e9e9; }
+    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:var(--fg); background:var(--bg); }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 40px 20px; }
+    header { display:flex; gap:24px; align-items:flex-start; justify-content:space-between; flex-wrap:wrap; }
+    h1 { margin:0; font-size: 34px; letter-spacing: -0.4px; }
+    .subtitle { margin-top:6px; color:var(--muted); line-height:1.5; }
+    .links a { margin-right:12px; color:inherit; text-decoration:none; border-bottom:1px solid var(--line); }
+    .links a:hover { border-bottom-color: var(--fg); }
+    nav { margin-top: 18px; display:flex; gap:14px; flex-wrap:wrap; }
+    nav a { color:var(--muted); text-decoration:none; padding:6px 10px; border:1px solid var(--line); border-radius: 999px; }
+    nav a:hover { color:var(--fg); border-color: var(--fg); }
+    section { margin-top: 34px; padding-top: 18px; border-top: 1px solid var(--line); }
+    h2 { margin: 0 0 12px; font-size: 18px; letter-spacing:-0.2px; }
+    ul { margin: 10px 0 0 18px; padding:0; }
+    li { margin: 8px 0; line-height:1.55; }
+    .meta { color:var(--muted); }
+    .item-title { font-weight: 600; }
+    .small { font-size: 14px; color: var(--muted); }
+    footer { margin-top: 44px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+    code { background:#f6f6f6; padding: 2px 5px; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Bom Kim</h1>
+        <div class="subtitle">
+          M.S. Student · Cloud & Serverless Security · Incheon National University (CCLAB)<br/>
+          <span class="small">Seoul/Incheon, Republic of Korea</span>
+        </div>
+        <div class="links" style="margin-top:10px;">
+          <a href="https://www.linkedin.com/in/b0mkim/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="https://github.com/b0mkim" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="https://www.cclab.info/publications" target="_blank" rel="noreferrer">Publications</a>
+          <!-- TODO: add Google Scholar / ORCID if you have -->
+          <!-- <a href="https://scholar.google.com/..." target="_blank" rel="noreferrer">Google Scholar</a> -->
+        </div>
+        <nav>
+          <a href="#about">About</a>
+          <a href="#research">Research</a>
+          <a href="#publications">Publications</a>
+          <a href="#projects">Projects</a>
+          <a href="#service">Service</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+      <div class="small">
+        <div><span class="meta">Email:</span> your_email_here</div>
+        <div><span class="meta">CV PDF:</span> <a href="./cv.pdf">cv.pdf</a> (optional)</div>
+        <div><span class="meta">Last updated:</span> 2026-02-19</div>
+      </div>
+    </header>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        I am an M.S. student at the Cybersecurity Convergence Laboratory (CCLAB), Incheon National University.
+        My research interests include <b>serverless security</b>, <b>least-privilege IAM enforcement</b>, and
+        <b>cloud-native security</b> (e.g., Kubernetes network/system policy).
+      </p>
+    </section>
+
+    <section id="research">
+      <h2>Research Interests</h2>
+      <ul>
+        <li>Serverless security: least-privilege enforcement, permission-bypass detection, runtime verification</li>
+        <li>Cloud-native security: Kubernetes networking, policy generation, eBPF/XDP-based enforcement</li>
+        <li>Practical security automation: analysis-to-policy pipelines, evaluation on real deployments</li>
+      </ul>
+    </section>
+
+    <section id="publications">
+      <h2>Selected Publications</h2>
+      <p class="small meta">
+        Source: CCLAB publications list. You can keep “Selected” here and link out to the full list.
+      </p>
+      <ul>
+        <li>
+          <span class="item-title">ALPS: Automated Least-Privilege Enforcement for Securing Serverless Functions</span><br/>
+          <span class="meta">Changhee Shin, <b>Bom Kim</b>, Seungsoo Lee · IEEE INFOCOM · 2026 (to appear)</span>
+        </li>
+        <li>
+          <span class="item-title">KubeTeus: An Intelligent Network Policy Generation Framework for Containers</span><br/>
+          <span class="meta"><b>Bom Kim</b>, Hyeonjun Park, Seungsoo Lee · IEEE INFOCOM · 2025</span>
+        </li>
+        <li>
+          <span class="item-title">Exploring Security Enhancements in Kubernetes CNI: A Deep Dive into Network Policies</span><br/>
+          <span class="meta"><b>Bom Kim</b>, Jinwoo Kim, Seungsoo Lee · IEEE Access · 2025</span>
+        </li>
+        <li>
+          <span class="item-title">KubeAegis: A Unified Security Policy Management Framework for Containerized Environments</span><br/>
+          <span class="meta"><b>Bom Kim</b>, Seungsoo Lee · IEEE Access · 2024</span>
+        </li>
+      </ul>
+
+      <p class="small">
+        Full list: <a href="https://www.cclab.info/publications" target="_blank" rel="noreferrer">CCLAB Publications</a>
+      </p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <ul>
+        <li><span class="item-title">[Project Name]</span> — one-line description and your role.</li>
+        <li><span class="item-title">[Project Name]</span> — link to GitHub repo or demo if available.</li>
+      </ul>
+    </section>
+
+    <section id="service">
+      <h2>Service & Awards</h2>
+      <ul>
+        <li>[Award/Scholarship] — year</li>
+        <li>[Reviewer/Artifact evaluation] — venue, year</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <ul>
+        <li>Email: your_email_here</li>
+        <li>GitHub: <a href="https://github.com/b0mkim" target="_blank" rel="noreferrer">@b0mkim</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/b0mkim/" target="_blank" rel="noreferrer">/in/b0mkim</a></li>
+      </ul>
+    </section>
+
+    <footer>
+      Built with GitHub Pages. If you want auto-managed publications, consider switching to a Jekyll academic template.
+    </footer>
+  </div>
+</body>
+</html>
