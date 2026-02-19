@@ -3,220 +3,439 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Bom Kim — CV</title>
-  <meta name="description" content="Bom Kim — Cloud Security, Access Control, AI-assisted Security" />
+  <title>Bom Kim</title>
+  <meta name="description" content="Bom Kim — Cloud Security · Access Control · AI-assisted Security" />
 
   <style>
-    :root { --fg:#111; --muted:#555; --bg:#fff; --line:#e9e9e9; --chip:#f6f6f6; }
-    * { box-sizing: border-box; }
-    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:var(--fg); background:var(--bg); }
-    .wrap { max-width: 980px; margin: 0 auto; padding: 44px 20px; }
-    header { display:flex; gap:26px; align-items:flex-start; justify-content:space-between; flex-wrap:wrap; }
-    h1 { margin:0; font-size: 36px; letter-spacing: -0.6px; }
-    .subtitle { margin-top:8px; color:var(--muted); line-height:1.55; }
-    .links { margin-top:12px; display:flex; gap:10px; flex-wrap:wrap; }
-    .links a {
-      color: inherit; text-decoration: none;
-      border: 1px solid var(--line);
-      background: #fff;
-      padding: 7px 12px;
+    :root{
+      --bg: #ffffff;
+      --fg: #0f172a;          /* slate-900 */
+      --muted:#475569;        /* slate-600 */
+      --soft:#f8fafc;         /* slate-50 */
+      --line:#e2e8f0;         /* slate-200 */
+
+      /* Mint / light green accent */
+      --mint:#6ee7b7;         /* emerald-300-ish */
+      --mint-ink:#0f766e;     /* teal-700 */
+      --mint-soft:#ecfdf5;    /* emerald-50 */
+
+      --shadow: 0 10px 30px rgba(2, 6, 23, .08);
+      --radius: 18px;
+    }
+
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--fg);
+      background: radial-gradient(1200px 600px at 20% -10%, var(--mint-soft), transparent 55%),
+                  radial-gradient(900px 500px at 80% 0%, rgba(110,231,183,.25), transparent 55%),
+                  var(--bg);
+    }
+
+    .wrap{
+      max-width: 1020px;
+      margin: 0 auto;
+      padding: 44px 20px 70px;
+    }
+
+    /* Top bar */
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      position:sticky;
+      top:0;
+      padding: 14px 0;
+      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,.65);
+      border-bottom: 1px solid rgba(226,232,240,.7);
+      z-index: 50;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight: 750; letter-spacing:-.3px;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:999px;
+      background: linear-gradient(135deg, var(--mint), #a7f3d0);
+      box-shadow: 0 0 0 6px rgba(110,231,183,.18);
+    }
+    .nav{
+      display:flex; gap:10px; flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .nav a{
+      text-decoration:none;
+      color: var(--muted);
+      font-size: 14px;
+      padding: 8px 12px;
       border-radius: 999px;
+      border: 1px solid rgba(226,232,240,.8);
+      background: rgba(248,250,252,.75);
+    }
+    .nav a:hover{
+      color: var(--fg);
+      border-color: rgba(15,118,110,.35);
+      box-shadow: 0 0 0 4px rgba(110,231,183,.18);
+    }
+
+    /* Hero */
+    .hero{
+      margin-top: 26px;
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 18px;
+      align-items:stretch;
+    }
+    @media (max-width: 860px){
+      .hero{ grid-template-columns: 1fr; }
+    }
+
+    .card{
+      border: 1px solid rgba(226,232,240,.85);
+      background: rgba(255,255,255,.78);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .hero-main{
+      padding: 26px 24px;
+      overflow:hidden;
+      position:relative;
+    }
+    .hero-main:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(700px 250px at 20% 10%, rgba(110,231,183,.35), transparent 60%),
+                  radial-gradient(700px 250px at 80% 0%, rgba(16,185,129,.22), transparent 55%);
+      pointer-events:none;
+    }
+    .hero-main > *{ position:relative; }
+
+    h1{
+      margin: 0;
+      font-size: 44px;
+      line-height: 1.05;
+      letter-spacing: -1px;
+    }
+    .subtitle{
+      margin-top: 10px;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(236,253,245,.9);
+      border: 1px solid rgba(15,118,110,.20);
+      color: var(--mint-ink);
+      font-weight: 650;
+      font-size: 13px;
+    }
+    .badge .mini{
+      width:7px; height:7px; border-radius:999px; background: var(--mint);
+      box-shadow: 0 0 0 4px rgba(110,231,183,.18);
+    }
+
+    .cta{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin-top: 16px;
+    }
+    .btn{
+      text-decoration:none;
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:8px;
+      font-weight: 650;
+      font-size: 14px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(226,232,240,.9);
+      background: rgba(248,250,252,.8);
+      color: var(--fg);
+    }
+    .btn:hover{
+      border-color: rgba(15,118,110,.35);
+      box-shadow: 0 0 0 4px rgba(110,231,183,.18);
+    }
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(110,231,183,.95), rgba(167,243,208,.95));
+      border-color: rgba(15,118,110,.25);
+      color: #064e3b;
+    }
+
+    /* Photo placeholder */
+    .hero-side{
+      padding: 22px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      gap: 14px;
+    }
+    .photo{
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 22px;
+      border: 1px dashed rgba(15,118,110,.35);
+      background:
+        radial-gradient(120px 120px at 30% 20%, rgba(110,231,183,.40), transparent 60%),
+        radial-gradient(160px 120px at 70% 0%, rgba(16,185,129,.22), transparent 60%),
+        rgba(236,253,245,.55);
+      display:flex; align-items:center; justify-content:center;
+      color: rgba(15,118,110,.85);
+      font-weight: 700;
+      letter-spacing: -.2px;
+    }
+    .small{
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+    .kv{
+      display:grid; gap: 8px;
+      margin-top: 6px;
+    }
+    .kv-row{
+      display:flex; gap: 10px;
+      align-items:flex-start;
       font-size: 14px;
     }
-    .links a:hover { border-color: var(--fg); }
-    nav { margin-top: 18px; display:flex; gap:10px; flex-wrap:wrap; }
-    nav a {
-      color:var(--muted); text-decoration:none;
-      padding:7px 12px;
-      border:1px solid var(--line);
-      border-radius: 999px;
+    .k{
+      min-width: 92px;
+      color: var(--muted);
+      font-weight: 650;
+    }
+    .kv-row a{ color: var(--fg); text-decoration:none; border-bottom: 1px solid rgba(226,232,240,.9); }
+    .kv-row a:hover{ border-bottom-color: rgba(15,118,110,.45); }
+
+    /* Sections */
+    section{
+      margin-top: 26px;
+      padding-top: 18px;
+    }
+    .section-title{
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      margin-bottom: 12px;
+    }
+    h2{
+      margin:0;
+      font-size: 18px;
+      letter-spacing: -.2px;
+    }
+    .rule{
+      height:1px; flex:1;
+      background: linear-gradient(90deg, rgba(226,232,240,.0), rgba(226,232,240,.9), rgba(226,232,240,.0));
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    @media (max-width: 860px){
+      .grid{ grid-template-columns: 1fr; }
+    }
+    .pane{
+      padding: 18px;
+    }
+
+    ul{ margin: 10px 0 0 18px; padding:0; }
+    li{ margin: 10px 0; line-height: 1.65; }
+    .muted{ color: var(--muted); }
+
+    /* Publications */
+    .pub{
+      margin-top: 10px;
+      border-top: 1px solid rgba(226,232,240,.8);
+      padding-top: 12px;
+    }
+    .pub h3{
+      margin: 0 0 8px;
       font-size: 14px;
-      background: var(--chip);
+      color: var(--mint-ink);
+      letter-spacing: -.1px;
     }
-    nav a:hover { color:var(--fg); border-color: var(--fg); }
-    section { margin-top: 34px; padding-top: 18px; border-top: 1px solid var(--line); }
-    h2 { margin: 0 0 12px; font-size: 18px; letter-spacing:-0.2px; }
-    p { margin: 10px 0; line-height: 1.7; }
-    ul { margin: 10px 0 0 18px; padding:0; }
-    li { margin: 10px 0; line-height:1.65; }
-    .meta { color:var(--muted); }
-    .item-title { font-weight: 650; }
-    .small { font-size: 14px; color: var(--muted); }
-    .grid { display:grid; grid-template-columns: 1fr; gap: 14px; }
-    @media (min-width: 860px) {
-      .grid { grid-template-columns: 1.15fr 0.85fr; gap: 20px; }
+    .pub ol{ margin: 0; padding-left: 18px; }
+    .pub li{ margin: 12px 0; }
+    .title{ font-weight: 750; }
+    .meta{ color: var(--muted); font-size: 14px; }
+
+    footer{
+      margin-top: 42px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(226,232,240,.85);
+      color: var(--muted);
+      font-size: 13px;
     }
-    .card { border:1px solid var(--line); border-radius: 16px; padding: 16px; background:#fff; }
-    .k { font-weight: 650; }
-    .kv { margin-top: 10px; display:grid; gap: 6px; }
-    .kv div { display:flex; gap: 10px; }
-    .kv .k { min-width: 110px; }
-    .pill { display:inline-block; font-size: 13px; padding: 4px 10px; border-radius: 999px; border:1px solid var(--line); background: var(--chip); color: var(--muted); }
-    .pub-block { margin-top: 14px; }
-    .pub-block h3 { margin: 0 0 6px; font-size: 15px; }
-    .pub-list { margin: 0; padding-left: 18px; }
-    .pub-list li { margin: 12px 0; }
-    footer { margin-top: 44px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
   </style>
 </head>
 
 <body>
   <div class="wrap">
-    <header>
-      <div style="flex:1; min-width: 280px;">
-        <h1>Bom Kim</h1>
+
+    <div class="topbar">
+      <div class="brand">
+        <span class="dot"></span>
+        <span>Bom Kim</span>
+      </div>
+      <div class="nav">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+
+    <div class="hero">
+      <div class="card hero-main">
+        <div class="badge"><span class="mini"></span> Cloud Security · Access Control · AI-assisted Security</div>
+        <h1 style="margin-top:14px;">Bom Kim</h1>
         <div class="subtitle">
-          Ph.D. Student · Network & System Security (NSS) Lab · KAIST<br/>
-          <span class="small">Daejeon, Republic of Korea</span>
+          Ph.D. student at KAIST in the Network & System Security (NSS) Lab.<br/>
+          My current research focuses on enhancing secure access control enforcement in cloud environments using AI.
         </div>
 
-        <div class="links">
-          <a href="https://www.linkedin.com/in/b0mkim/" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a href="https://github.com/b0mkim" target="_blank" rel="noreferrer">GitHub</a>
-          <a href="https://www.cclab.info/publications" target="_blank" rel="noreferrer">CCLAB Publications</a>
-          <!-- Optional -->
-          <!-- <a href="https://scholar.google.com/..." target="_blank" rel="noreferrer">Google Scholar</a> -->
-          <!-- <a href="https://orcid.org/..." target="_blank" rel="noreferrer">ORCID</a> -->
-          <!-- CV PDF link (add cv.pdf later) -->
-          <a href="./assets/cv.pdf">CV (PDF)</a>
+        <div class="cta">
+          <a class="btn primary" href="https://www.linkedin.com/in/b0mkim/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn" href="https://github.com/b0mkim" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn" href="https://www.cclab.info/publications" target="_blank" rel="noreferrer">CCLAB Publications</a>
         </div>
 
-        <nav>
-          <a href="#about">About</a>
-          <a href="#interests">Interests</a>
-          <a href="#publications">Publications</a>
-          <a href="#awards">Honors & Awards</a>
-          <a href="#contact">Contact</a>
-        </nav>
+        <p class="small" style="margin-top:14px;">
+          <span class="muted">Note:</span> I will add a profile photo later and keep this page minimal and readable.
+        </p>
       </div>
 
-      <div class="card" style="min-width: 280px;">
-        <div class="pill">Quick Info</div>
-        <div class="kv">
-          <div><span class="k">Email</span><span class="meta">your_email_here</span></div>
-          <div><span class="k">CV PDF</span><span class="meta">assets/cv.pdf</span></div>
-          <div><span class="k">Last updated</span><span class="meta">2026-02-19</span></div>
+      <div class="card hero-side">
+        <div class="photo">Photo Placeholder</div>
+
+        <div>
+          <div class="small muted" style="font-weight:700; letter-spacing:-.1px;">Quick Info</div>
+          <div class="kv">
+            <div class="kv-row"><span class="k">Location</span><span>Daejeon, Republic of Korea</span></div>
+            <div class="kv-row"><span class="k">Email</span><span>your_email_here</span></div>
+            <div class="kv-row"><span class="k">Lab</span><a href="https://nss.kaist.ac.kr/" target="_blank" rel="noreferrer">NSS Lab</a></div>
+          </div>
+          <div class="small" style="margin-top:10px;">Last updated: 2026-02-19</div>
         </div>
       </div>
-    </header>
+    </div>
 
     <section id="about">
-      <h2>About</h2>
-      <div class="grid">
-        <div class="card">
-          <p>
-            I am a Ph.D. student at KAIST in the NSS Lab.
-          </p>
-          <p>
-            My current research focuses on enhancing secure access control enforcement in cloud environments using AI.
-          </p>
-          <p class="small meta">
-            I completed my master’s degree at Incheon National University.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="pill">Areas</div>
-          <ul>
-            <li>Cloud security</li>
-            <li>Access control and policy enforcement</li>
-            <li>AI-assisted security automation</li>
-          </ul>
-        </div>
+      <div class="section-title">
+        <h2>About</h2><div class="rule"></div>
+      </div>
+      <div class="card pane">
+        <p style="margin:0;">
+          I work on cloud security with an emphasis on access control and policy enforcement.
+          I use AI to strengthen analysis and enforcement workflows for modern cloud environments.
+        </p>
       </div>
     </section>
 
-    <section id="interests">
-      <h2>Research Interests</h2>
-      <ul>
-        <li>Cloud security with emphasis on secure and practical access control</li>
-        <li>Policy enforcement and runtime security mechanisms in modern cloud systems</li>
-        <li>Using AI to improve security analysis and strengthen enforcement workflows</li>
-      </ul>
+    <section id="research">
+      <div class="section-title">
+        <h2>Research</h2><div class="rule"></div>
+      </div>
+
+      <div class="grid">
+        <div class="card pane">
+          <div class="small muted" style="font-weight:750;">Current Focus</div>
+          <ul>
+            <li>Access control and enforcement in cloud security</li>
+            <li>Policy-driven security mechanisms for cloud-native systems</li>
+            <li>AI-assisted security automation for stronger enforcement</li>
+          </ul>
+        </div>
+
+        <div class="card pane">
+          <div class="small muted" style="font-weight:750;">Keywords</div>
+          <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:10px;">
+            <span class="badge"><span class="mini"></span> Cloud Security</span>
+            <span class="badge"><span class="mini"></span> Access Control</span>
+            <span class="badge"><span class="mini"></span> Policy Enforcement</span>
+            <span class="badge"><span class="mini"></span> AI-assisted Security</span>
+            <span class="badge"><span class="mini"></span> Cloud-native</span>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="publications">
-      <h2>Publications</h2>
-      <p class="small meta">
-        Full publication lists are often long so I separate International and Domestic publications here.
-      </p>
-
-      <div class="pub-block">
-        <h3>International</h3>
-        <ol class="pub-list">
-          <li>
-            <span class="item-title">ALPS: Automated Least-Privilege Enforcement for Securing Serverless Functions</span><br/>
-            <span class="meta">Changhee Shin, <b>Bom Kim</b>, Seungsoo Lee · IEEE INFOCOM · 2026 (to appear)</span>
-          </li>
-          <li>
-            <span class="item-title">Bambda: A Real-Time Verification Framework for Serverless Computing</span><br/>
-            <span class="meta">Changhee Shin, <b>Bom Kim</b>, Seungsoo Lee · IEEE Access · 2025</span>
-          </li>
-          <li>
-            <span class="item-title">KubeTeus: An Intelligent Network Policy Generation Framework for Containers</span><br/>
-            <span class="meta"><b>Bom Kim</b>, Hyeonjun Park, Seungsoo Lee · IEEE INFOCOM · 2025</span>
-          </li>
-          <li>
-            <span class="item-title">Exploring Security Enhancements in Kubernetes CNI: A Deep Dive into Network Policies</span><br/>
-            <span class="meta"><b>Bom Kim</b>, Jinwoo Kim, Seungsoo Lee · IEEE Access · 2025</span>
-          </li>
-          <li>
-            <span class="item-title">KubeAegis: A Unified Security Policy Management Framework for Containerized Environments</span><br/>
-            <span class="meta"><b>Bom Kim</b>, Seungsoo Lee · IEEE Access · 2024</span>
-          </li>
-        </ol>
+      <div class="section-title">
+        <h2>Publications</h2><div class="rule"></div>
       </div>
 
-      <div class="pub-block">
-        <h3>Domestic</h3>
-        <ol class="pub-list">
-          <li>
-            <span class="item-title">Kunerva+: 클라우드 네이티브 환경을 위한 지능형 네트워크 정책 생성 프레임워크</span><br/>
-            <span class="meta"><b>김봄</b>, 이승수 · 한국정보보호학회논문지 · 2024</span>
-          </li>
-          <li>
-            <span class="item-title">Kunerva+: 컨테이너를 위한 지능형 보안 정책 생성 프레임워크</span><br/>
-            <span class="meta"><b>김봄</b>, 최유정, 이승수 · 한국정보보호학회 하계학술대회 · 2024</span>
-          </li>
-          <li>
-            <span class="item-title">IntentShield: 쿠버네티스를 위한 인텐트 기반 보안 정책 오퍼레이터 프레임워크</span><br/>
-            <span class="meta"><b>김봄</b>, 이승수 · 한국정보보호학회 동계학술대회 · 2023</span>
-          </li>
-          <li>
-            <span class="item-title">컨테이너 환경에서의 네트워크 보안 정책 집행 분석</span><br/>
-            <span class="meta"><b>김봄</b>, 이승수 · 한국정보보호학회논문지 · 2023</span>
-          </li>
-        </ol>
+      <div class="card pane">
+        <div class="pub">
+          <h3>International</h3>
+          <ol>
+            <li>
+              <span class="title">ALPS: Automated Least-Privilege Enforcement for Securing Serverless Functions</span><br/>
+              <span class="meta">Changhee Shin, <b>Bom Kim</b>, Seungsoo Lee · IEEE INFOCOM · 2026 (to appear)</span>
+            </li>
+            <li>
+              <span class="title">Bambda: A Real-Time Verification Framework for Serverless Computing</span><br/>
+              <span class="meta">Changhee Shin, <b>Bom Kim</b>, Seungsoo Lee · IEEE Access · 2025</span>
+            </li>
+            <li>
+              <span class="title">KubeTeus: An Intelligent Network Policy Generation Framework for Containers</span><br/>
+              <span class="meta"><b>Bom Kim</b>, Hyeonjun Park, Seungsoo Lee · IEEE INFOCOM · 2025</span>
+            </li>
+            <li>
+              <span class="title">Exploring Security Enhancements in Kubernetes CNI: A Deep Dive into Network Policies</span><br/>
+              <span class="meta"><b>Bom Kim</b>, Jinwoo Kim, Seungsoo Lee · IEEE Access · 2025</span>
+            </li>
+            <li>
+              <span class="title">KubeAegis: A Unified Security Policy Management Framework for Containerized Environments</span><br/>
+              <span class="meta"><b>Bom Kim</b>, Seungsoo Lee · IEEE Access · 2024</span>
+            </li>
+          </ol>
+        </div>
+
+        <div class="pub">
+          <h3>Domestic</h3>
+          <ol>
+            <li>
+              <span class="title">Kunerva+: 클라우드 네이티브 환경을 위한 지능형 네트워크 정책 생성 프레임워크</span><br/>
+              <span class="meta"><b>김봄</b>, 이승수 · 한국정보보호학회논문지 · 2024</span>
+            </li>
+            <li>
+              <span class="title">Kunerva+: 컨테이너를 위한 지능형 보안 정책 생성 프레임워크</span><br/>
+              <span class="meta"><b>김봄</b>, 최유정, 이승수 · 한국정보보호학회 하계학술대회 · 2024</span>
+            </li>
+            <li>
+              <span class="title">IntentShield: 쿠버네티스를 위한 인텐트 기반 보안 정책 오퍼레이터 프레임워크</span><br/>
+              <span class="meta"><b>김봄</b>, 이승수 · 한국정보보호학회 동계학술대회 · 2023</span>
+            </li>
+            <li>
+              <span class="title">컨테이너 환경에서의 네트워크 보안 정책 집행 분석</span><br/>
+              <span class="meta"><b>김봄</b>, 이승수 · 한국정보보호학회논문지 · 2023</span>
+            </li>
+          </ol>
+        </div>
       </div>
-
-      <p class="small meta" style="margin-top:14px;">
-        If you want, you can also keep an external link: <a href="https://www.cclab.info/publications" target="_blank" rel="noreferrer">CCLAB Publications</a>
-      </p>
-    </section>
-
-    <section id="awards">
-      <h2>Honors & Awards</h2>
-      <ul>
-        <li><span class="item-title">Graduation with Honors</span> · Undergraduate Commencement · Aug 2023</li>
-        <li><span class="item-title">Best Paper Award</span> · Korea Institute of Information Security & Cryptology (KIISC) Summer Conference · Jun 2024</li>
-        <li><span class="item-title">National Science & Technology Scholarship</span> · Undergraduate · Full scholarship for 4 years</li>
-      </ul>
-      <p class="small meta">
-        You mentioned you will share other awards later. We can append them here.
-      </p>
     </section>
 
     <section id="contact">
-      <h2>Contact</h2>
-      <ul>
-        <li>Email: your_email_here</li>
-        <li>GitHub: <a href="https://github.com/b0mkim" target="_blank" rel="noreferrer">@b0mkim</a></li>
-        <li>LinkedIn: <a href="https://www.linkedin.com/in/b0mkim/" target="_blank" rel="noreferrer">/in/b0mkim</a></li>
-      </ul>
+      <div class="section-title">
+        <h2>Contact</h2><div class="rule"></div>
+      </div>
+
+      <div class="card pane">
+        <ul style="margin-top:0;">
+          <li>Email: your_email_here</li>
+          <li>GitHub: <a href="https://github.com/b0mkim" target="_blank" rel="noreferrer">@b0mkim</a></li>
+          <li>LinkedIn: <a href="https://www.linkedin.com/in/b0mkim/" target="_blank" rel="noreferrer">/in/b0mkim</a></li>
+        </ul>
+      </div>
     </section>
 
     <footer>
-      Built with GitHub Pages. Add <code>assets/cv.pdf</code> when you are ready.
+      Built as a simple static page on GitHub Pages.
     </footer>
   </div>
 </body>
