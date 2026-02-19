@@ -13,10 +13,10 @@
       --muted:#4b5563;     /* gray-600 */
       --line:#e5e7eb;      /* gray-200 */
 
-      /* soft light-green accent (NOT too strong) */
-      --accent:#7ccf9a;    /* soft green */
-      --accent-ink:#0f5132;
-      --accent-soft:#f1fbf5;
+      /* Post-green / dark khaki accent */
+      --accent:#bdb76b;        /* DarkKhaki */
+      --accent-ink:#3f3a1f;    /* deep olive text */
+      --accent-soft:#f7f6ea;   /* very light khaki tint */
 
       --radius:16px;
       --shadow: 0 10px 28px rgba(17,24,39,.06);
@@ -37,7 +37,6 @@
       padding: 48px 20px 72px;
     }
 
-    /* top simple nav (non-sticky to avoid resemblance) */
     .top{
       display:flex;
       align-items:center;
@@ -73,7 +72,6 @@
       background: #fafafa;
     }
 
-    /* hero */
     .hero{
       display:grid;
       grid-template-columns: 1.2fr .8fr;
@@ -98,12 +96,12 @@
       overflow:hidden;
     }
 
-    /* subtle accent line to feel "designed" without gradients */
+    /* subtle accent line */
     .hero-left:before{
       content:"";
       position:absolute;
       inset: 0;
-      border-top: 4px solid rgba(124,207,154,.55);
+      border-top: 4px solid rgba(189,183,107,.65);
       pointer-events:none;
     }
 
@@ -125,7 +123,7 @@
       padding: 12px 14px;
       border-radius: 12px;
       background: var(--accent-soft);
-      border: 1px solid rgba(124,207,154,.35);
+      border: 1px solid rgba(189,183,107,.40);
       color: var(--accent-ink);
       font-weight: 650;
       line-height: 1.55;
@@ -152,12 +150,12 @@
       color: var(--fg);
     }
     .btn:hover{
-      border-color: rgba(124,207,154,.6);
-      box-shadow: 0 0 0 4px rgba(124,207,154,.16);
+      border-color: rgba(189,183,107,.70);
+      box-shadow: 0 0 0 4px rgba(189,183,107,.16);
     }
     .btn.primary{
-      border-color: rgba(124,207,154,.55);
-      background: rgba(124,207,154,.14);
+      border-color: rgba(189,183,107,.65);
+      background: rgba(189,183,107,.14);
       color: var(--accent-ink);
     }
 
@@ -172,7 +170,7 @@
       width:100%;
       aspect-ratio: 1 / 1;
       border-radius: 18px;
-      border: 1px dashed rgba(124,207,154,.55);
+      border: 1px dashed rgba(189,183,107,.65);
       background: #fbfbfb;
       display:flex;
       align-items:center;
@@ -200,7 +198,6 @@
       font-weight: 650;
     }
 
-    /* sections */
     section{
       margin-top: 26px;
       padding-top: 18px;
@@ -218,7 +215,6 @@
     ul{ margin: 10px 0 0 18px; padding:0; }
     li{ margin: 10px 0; line-height: 1.65; }
 
-    /* publications */
     .pub-block{
       margin-top: 12px;
       border: 1px solid var(--line);
@@ -231,6 +227,7 @@
       font-size: 14px;
       font-weight: 750;
       color: var(--accent-ink);
+      letter-spacing: -.1px;
     }
     .pub-list{ margin:0; padding-left: 18px; }
     .pub-list li{ margin: 12px 0; }
@@ -243,8 +240,8 @@
       font-weight: 750;
       padding: 3px 8px;
       border-radius: 999px;
-      border: 1px solid rgba(124,207,154,.45);
-      background: rgba(124,207,154,.12);
+      border: 1px solid rgba(189,183,107,.55);
+      background: rgba(189,183,107,.14);
       color: var(--accent-ink);
       margin-right: 8px;
       vertical-align: 2px;
@@ -264,7 +261,7 @@
       border-bottom: 1px solid rgba(229,231,235,.9);
     }
     a.inline:hover{
-      border-bottom-color: rgba(124,207,154,.75);
+      border-bottom-color: rgba(189,183,107,.85);
     }
   </style>
 </head>
@@ -394,7 +391,7 @@
       </div>
 
       <p style="margin-top:12px;" class="pmeta">
-        You can also browse the full list at
+        Full list at
         <a class="inline" href="https://www.cclab.info/publications" target="_blank" rel="noreferrer">CCLAB publications</a>.
       </p>
     </section>
