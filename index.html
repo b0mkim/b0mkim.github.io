@@ -4,122 +4,206 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Bom Kim — CV</title>
+  <meta name="description" content="Bom Kim — Cloud Security, Access Control, AI-assisted Security" />
+
   <style>
-    :root { --fg:#111; --muted:#555; --bg:#fff; --line:#e9e9e9; }
+    :root { --fg:#111; --muted:#555; --bg:#fff; --line:#e9e9e9; --chip:#f6f6f6; }
+    * { box-sizing: border-box; }
     body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:var(--fg); background:var(--bg); }
-    .wrap { max-width: 980px; margin: 0 auto; padding: 40px 20px; }
-    header { display:flex; gap:24px; align-items:flex-start; justify-content:space-between; flex-wrap:wrap; }
-    h1 { margin:0; font-size: 34px; letter-spacing: -0.4px; }
-    .subtitle { margin-top:6px; color:var(--muted); line-height:1.5; }
-    .links a { margin-right:12px; color:inherit; text-decoration:none; border-bottom:1px solid var(--line); }
-    .links a:hover { border-bottom-color: var(--fg); }
-    nav { margin-top: 18px; display:flex; gap:14px; flex-wrap:wrap; }
-    nav a { color:var(--muted); text-decoration:none; padding:6px 10px; border:1px solid var(--line); border-radius: 999px; }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 44px 20px; }
+    header { display:flex; gap:26px; align-items:flex-start; justify-content:space-between; flex-wrap:wrap; }
+    h1 { margin:0; font-size: 36px; letter-spacing: -0.6px; }
+    .subtitle { margin-top:8px; color:var(--muted); line-height:1.55; }
+    .links { margin-top:12px; display:flex; gap:10px; flex-wrap:wrap; }
+    .links a {
+      color: inherit; text-decoration: none;
+      border: 1px solid var(--line);
+      background: #fff;
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 14px;
+    }
+    .links a:hover { border-color: var(--fg); }
+    nav { margin-top: 18px; display:flex; gap:10px; flex-wrap:wrap; }
+    nav a {
+      color:var(--muted); text-decoration:none;
+      padding:7px 12px;
+      border:1px solid var(--line);
+      border-radius: 999px;
+      font-size: 14px;
+      background: var(--chip);
+    }
     nav a:hover { color:var(--fg); border-color: var(--fg); }
     section { margin-top: 34px; padding-top: 18px; border-top: 1px solid var(--line); }
     h2 { margin: 0 0 12px; font-size: 18px; letter-spacing:-0.2px; }
+    p { margin: 10px 0; line-height: 1.7; }
     ul { margin: 10px 0 0 18px; padding:0; }
-    li { margin: 8px 0; line-height:1.55; }
+    li { margin: 10px 0; line-height:1.65; }
     .meta { color:var(--muted); }
-    .item-title { font-weight: 600; }
+    .item-title { font-weight: 650; }
     .small { font-size: 14px; color: var(--muted); }
+    .grid { display:grid; grid-template-columns: 1fr; gap: 14px; }
+    @media (min-width: 860px) {
+      .grid { grid-template-columns: 1.15fr 0.85fr; gap: 20px; }
+    }
+    .card { border:1px solid var(--line); border-radius: 16px; padding: 16px; background:#fff; }
+    .k { font-weight: 650; }
+    .kv { margin-top: 10px; display:grid; gap: 6px; }
+    .kv div { display:flex; gap: 10px; }
+    .kv .k { min-width: 110px; }
+    .pill { display:inline-block; font-size: 13px; padding: 4px 10px; border-radius: 999px; border:1px solid var(--line); background: var(--chip); color: var(--muted); }
+    .pub-block { margin-top: 14px; }
+    .pub-block h3 { margin: 0 0 6px; font-size: 15px; }
+    .pub-list { margin: 0; padding-left: 18px; }
+    .pub-list li { margin: 12px 0; }
     footer { margin-top: 44px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
-    code { background:#f6f6f6; padding: 2px 5px; border-radius: 6px; }
   </style>
 </head>
+
 <body>
   <div class="wrap">
     <header>
-      <div>
+      <div style="flex:1; min-width: 280px;">
         <h1>Bom Kim</h1>
         <div class="subtitle">
-          M.S. Student · Cloud & Serverless Security · Incheon National University (CCLAB)<br/>
-          <span class="small">Seoul/Incheon, Republic of Korea</span>
+          Ph.D. Student · Network & System Security (NSS) Lab · KAIST<br/>
+          <span class="small">Daejeon, Republic of Korea</span>
         </div>
-        <div class="links" style="margin-top:10px;">
+
+        <div class="links">
           <a href="https://www.linkedin.com/in/b0mkim/" target="_blank" rel="noreferrer">LinkedIn</a>
           <a href="https://github.com/b0mkim" target="_blank" rel="noreferrer">GitHub</a>
-          <a href="https://www.cclab.info/publications" target="_blank" rel="noreferrer">Publications</a>
-          <!-- TODO: add Google Scholar / ORCID if you have -->
+          <a href="https://www.cclab.info/publications" target="_blank" rel="noreferrer">CCLAB Publications</a>
+          <!-- Optional -->
           <!-- <a href="https://scholar.google.com/..." target="_blank" rel="noreferrer">Google Scholar</a> -->
+          <!-- <a href="https://orcid.org/..." target="_blank" rel="noreferrer">ORCID</a> -->
+          <!-- CV PDF link (add cv.pdf later) -->
+          <a href="./assets/cv.pdf">CV (PDF)</a>
         </div>
+
         <nav>
           <a href="#about">About</a>
-          <a href="#research">Research</a>
+          <a href="#interests">Interests</a>
           <a href="#publications">Publications</a>
-          <a href="#projects">Projects</a>
-          <a href="#service">Service</a>
+          <a href="#awards">Honors & Awards</a>
           <a href="#contact">Contact</a>
         </nav>
       </div>
-      <div class="small">
-        <div><span class="meta">Email:</span> your_email_here</div>
-        <div><span class="meta">CV PDF:</span> <a href="./cv.pdf">cv.pdf</a> (optional)</div>
-        <div><span class="meta">Last updated:</span> 2026-02-19</div>
+
+      <div class="card" style="min-width: 280px;">
+        <div class="pill">Quick Info</div>
+        <div class="kv">
+          <div><span class="k">Email</span><span class="meta">your_email_here</span></div>
+          <div><span class="k">CV PDF</span><span class="meta">assets/cv.pdf</span></div>
+          <div><span class="k">Last updated</span><span class="meta">2026-02-19</span></div>
+        </div>
       </div>
     </header>
 
     <section id="about">
       <h2>About</h2>
-      <p>
-        I am an M.S. student at the Cybersecurity Convergence Laboratory (CCLAB), Incheon National University.
-        My research interests include <b>serverless security</b>, <b>least-privilege IAM enforcement</b>, and
-        <b>cloud-native security</b> (e.g., Kubernetes network/system policy).
-      </p>
+      <div class="grid">
+        <div class="card">
+          <p>
+            I am a Ph.D. student at KAIST in the NSS Lab.
+          </p>
+          <p>
+            My current research focuses on enhancing secure access control enforcement in cloud environments using AI.
+          </p>
+          <p class="small meta">
+            I completed my master’s degree at Incheon National University.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="pill">Areas</div>
+          <ul>
+            <li>Cloud security</li>
+            <li>Access control and policy enforcement</li>
+            <li>AI-assisted security automation</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
-    <section id="research">
+    <section id="interests">
       <h2>Research Interests</h2>
       <ul>
-        <li>Serverless security: least-privilege enforcement, permission-bypass detection, runtime verification</li>
-        <li>Cloud-native security: Kubernetes networking, policy generation, eBPF/XDP-based enforcement</li>
-        <li>Practical security automation: analysis-to-policy pipelines, evaluation on real deployments</li>
+        <li>Cloud security with emphasis on secure and practical access control</li>
+        <li>Policy enforcement and runtime security mechanisms in modern cloud systems</li>
+        <li>Using AI to improve security analysis and strengthen enforcement workflows</li>
       </ul>
     </section>
 
     <section id="publications">
-      <h2>Selected Publications</h2>
+      <h2>Publications</h2>
       <p class="small meta">
-        Source: CCLAB publications list. You can keep “Selected” here and link out to the full list.
+        Full publication lists are often long so I separate International and Domestic publications here.
       </p>
-      <ul>
-        <li>
-          <span class="item-title">ALPS: Automated Least-Privilege Enforcement for Securing Serverless Functions</span><br/>
-          <span class="meta">Changhee Shin, <b>Bom Kim</b>, Seungsoo Lee · IEEE INFOCOM · 2026 (to appear)</span>
-        </li>
-        <li>
-          <span class="item-title">KubeTeus: An Intelligent Network Policy Generation Framework for Containers</span><br/>
-          <span class="meta"><b>Bom Kim</b>, Hyeonjun Park, Seungsoo Lee · IEEE INFOCOM · 2025</span>
-        </li>
-        <li>
-          <span class="item-title">Exploring Security Enhancements in Kubernetes CNI: A Deep Dive into Network Policies</span><br/>
-          <span class="meta"><b>Bom Kim</b>, Jinwoo Kim, Seungsoo Lee · IEEE Access · 2025</span>
-        </li>
-        <li>
-          <span class="item-title">KubeAegis: A Unified Security Policy Management Framework for Containerized Environments</span><br/>
-          <span class="meta"><b>Bom Kim</b>, Seungsoo Lee · IEEE Access · 2024</span>
-        </li>
-      </ul>
 
-      <p class="small">
-        Full list: <a href="https://www.cclab.info/publications" target="_blank" rel="noreferrer">CCLAB Publications</a>
+      <div class="pub-block">
+        <h3>International</h3>
+        <ol class="pub-list">
+          <li>
+            <span class="item-title">ALPS: Automated Least-Privilege Enforcement for Securing Serverless Functions</span><br/>
+            <span class="meta">Changhee Shin, <b>Bom Kim</b>, Seungsoo Lee · IEEE INFOCOM · 2026 (to appear)</span>
+          </li>
+          <li>
+            <span class="item-title">Bambda: A Real-Time Verification Framework for Serverless Computing</span><br/>
+            <span class="meta">Changhee Shin, <b>Bom Kim</b>, Seungsoo Lee · IEEE Access · 2025</span>
+          </li>
+          <li>
+            <span class="item-title">KubeTeus: An Intelligent Network Policy Generation Framework for Containers</span><br/>
+            <span class="meta"><b>Bom Kim</b>, Hyeonjun Park, Seungsoo Lee · IEEE INFOCOM · 2025</span>
+          </li>
+          <li>
+            <span class="item-title">Exploring Security Enhancements in Kubernetes CNI: A Deep Dive into Network Policies</span><br/>
+            <span class="meta"><b>Bom Kim</b>, Jinwoo Kim, Seungsoo Lee · IEEE Access · 2025</span>
+          </li>
+          <li>
+            <span class="item-title">KubeAegis: A Unified Security Policy Management Framework for Containerized Environments</span><br/>
+            <span class="meta"><b>Bom Kim</b>, Seungsoo Lee · IEEE Access · 2024</span>
+          </li>
+        </ol>
+      </div>
+
+      <div class="pub-block">
+        <h3>Domestic</h3>
+        <ol class="pub-list">
+          <li>
+            <span class="item-title">Kunerva+: 클라우드 네이티브 환경을 위한 지능형 네트워크 정책 생성 프레임워크</span><br/>
+            <span class="meta"><b>김봄</b>, 이승수 · 한국정보보호학회논문지 · 2024</span>
+          </li>
+          <li>
+            <span class="item-title">Kunerva+: 컨테이너를 위한 지능형 보안 정책 생성 프레임워크</span><br/>
+            <span class="meta"><b>김봄</b>, 최유정, 이승수 · 한국정보보호학회 하계학술대회 · 2024</span>
+          </li>
+          <li>
+            <span class="item-title">IntentShield: 쿠버네티스를 위한 인텐트 기반 보안 정책 오퍼레이터 프레임워크</span><br/>
+            <span class="meta"><b>김봄</b>, 이승수 · 한국정보보호학회 동계학술대회 · 2023</span>
+          </li>
+          <li>
+            <span class="item-title">컨테이너 환경에서의 네트워크 보안 정책 집행 분석</span><br/>
+            <span class="meta"><b>김봄</b>, 이승수 · 한국정보보호학회논문지 · 2023</span>
+          </li>
+        </ol>
+      </div>
+
+      <p class="small meta" style="margin-top:14px;">
+        If you want, you can also keep an external link: <a href="https://www.cclab.info/publications" target="_blank" rel="noreferrer">CCLAB Publications</a>
       </p>
     </section>
 
-    <section id="projects">
-      <h2>Projects</h2>
+    <section id="awards">
+      <h2>Honors & Awards</h2>
       <ul>
-        <li><span class="item-title">[Project Name]</span> — one-line description and your role.</li>
-        <li><span class="item-title">[Project Name]</span> — link to GitHub repo or demo if available.</li>
+        <li><span class="item-title">Graduation with Honors</span> · Undergraduate Commencement · Aug 2023</li>
+        <li><span class="item-title">Best Paper Award</span> · Korea Institute of Information Security & Cryptology (KIISC) Summer Conference · Jun 2024</li>
+        <li><span class="item-title">National Science & Technology Scholarship</span> · Undergraduate · Full scholarship for 4 years</li>
       </ul>
-    </section>
-
-    <section id="service">
-      <h2>Service & Awards</h2>
-      <ul>
-        <li>[Award/Scholarship] — year</li>
-        <li>[Reviewer/Artifact evaluation] — venue, year</li>
-      </ul>
+      <p class="small meta">
+        You mentioned you will share other awards later. We can append them here.
+      </p>
     </section>
 
     <section id="contact">
@@ -132,7 +216,7 @@
     </section>
 
     <footer>
-      Built with GitHub Pages. If you want auto-managed publications, consider switching to a Jekyll academic template.
+      Built with GitHub Pages. Add <code>assets/cv.pdf</code> when you are ready.
     </footer>
   </div>
 </body>
