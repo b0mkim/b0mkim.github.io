@@ -47,7 +47,6 @@
       padding: 34px 18px 80px;
     }
 
-    /* Layout */
     .layout{
       display:grid;
       grid-template-columns: 320px 1fr;
@@ -58,7 +57,6 @@
       .layout{ grid-template-columns: 1fr; }
     }
 
-    /* Left panel */
     .panel{
       border: 1px solid var(--line);
       background: var(--panel);
@@ -117,7 +115,7 @@
       color: var(--muted);
     }
     .row{ display:flex; justify-content:space-between; gap: 10px; }
-    .k{ color: rgba(17,24,39,.85); font-weight: 650; min-width: 72px; }
+    .k{ color: rgba(17,24,39,.85); font-weight: 650; min-width: 92px; }
 
     .actions{
       margin-top: 14px;
@@ -161,7 +159,6 @@
       background: rgba(189,183,107,.10);
     }
 
-    /* Right content */
     .content{
       border: 1px solid var(--line);
       border-radius: var(--radius);
@@ -217,7 +214,6 @@
     }
     .list li{ margin: 10px 0; }
 
-    /* Publications */
     .pubgroup{
       margin-top: 10px;
       border: 1px solid rgba(17,24,39,.10);
@@ -256,4 +252,153 @@
     footer{
       margin-top: 18px;
       padding: 12px 0 6px;
-      co
+      color: var(--muted);
+      font-size: 12px;
+      text-align:right;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="layout">
+      <!-- LEFT PANEL -->
+      <aside class="panel">
+        <h1 class="name">Bom Kim</h1>
+        <div class="sub">
+          Ph.D. student at KAIST<br/>
+          Network &amp; System Security (NSS) Lab<br/>
+          Advisor: Prof. Seungsoo Lee<br/>
+          Daejeon, Republic of Korea
+        </div>
+
+        <div class="accentbar"></div>
+
+        <div class="photo">Photo (later)</div>
+
+        <div class="meta">
+          <div class="row"><span class="k">Email</span><span>spring@kaist.ac.kr</span></div>
+          <div class="row"><span class="k">Lab</span><a class="link" href="https://nss.kaist.ac.kr/" target="_blank" rel="noreferrer">nss.kaist.ac.kr</a></div>
+          <div class="row"><span class="k">GitHub</span><a class="link" href="https://github.com/b0mkim" target="_blank" rel="noreferrer">b0mkim</a></div>
+          <div class="row"><span class="k">LinkedIn</span><a class="link" href="https://www.linkedin.com/in/b0mkim/" target="_blank" rel="noreferrer">/in/b0mkim</a></div>
+        </div>
+
+        <div class="actions">
+          <a class="btn" href="mailto:spring@kaist.ac.kr">Email</a>
+          <a class="btn" href="https://nss.kaist.ac.kr/" target="_blank" rel="noreferrer">Lab</a>
+          <a class="btn" href="https://github.com/b0mkim" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/b0mkim/" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+
+        <div class="nav">
+          <a href="#about">About</a>
+          <a href="#research">Research</a>
+          <a href="#publications">Publications</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </aside>
+
+      <!-- RIGHT CONTENT -->
+      <main class="content">
+        <section id="about" class="section">
+          <div class="h2line"><h2>About</h2><div class="rule"></div></div>
+          <p class="about">
+            My current research focuses on strengthening access control enforcement for cloud security using AI.
+            I aim to make policy enforcement more practical and robust in modern cloud environments.
+          </p>
+
+          <div class="edu">
+            <strong>Education</strong><br/>
+            2020.03–2023.08 · Incheon National University · B.S. in Computer Science and Engineering<br/>
+            2023.09–2026.02 · Incheon National University · M.S. in Computer Science and Engineering
+          </div>
+        </section>
+
+        <section id="research" class="section">
+          <div class="h2line"><h2>Research</h2><div class="rule"></div></div>
+          <ul class="list">
+            <li>Cloud security with emphasis on access control and policy enforcement</li>
+            <li>Security policy analysis and automation for cloud environments</li>
+            <li>AI-assisted methods to strengthen enforcement workflows</li>
+          </ul>
+        </section>
+
+        <section id="publications" class="section">
+          <div class="h2line"><h2>Publications</h2><div class="rule"></div></div>
+
+          <div class="pubgroup">
+            <div class="pubgroup-title">International</div>
+            <ol class="pub">
+              <li>
+                <span class="tag">Conference</span>
+                <span class="ptitle">ALPS: Automated Least-Privilege Enforcement for Securing Serverless Functions</span><br/>
+                <span class="pmeta">Changhee Shin, <b>Bom Kim</b>, Seungsoo Lee · IEEE INFOCOM · 2026 (to appear)</span>
+              </li>
+              <li>
+                <span class="tag">Journal</span>
+                <span class="ptitle">Bambda: A Real-Time Verification Framework for Serverless Computing</span><br/>
+                <span class="pmeta">Changhee Shin, <b>Bom Kim</b>, Seungsoo Lee · IEEE Access · 2025</span>
+              </li>
+              <li>
+                <span class="tag">Conference</span>
+                <span class="ptitle">KubeTeus: An Intelligent Network Policy Generation Framework for Containers</span><br/>
+                <span class="pmeta"><b>Bom Kim</b>, Hyeonjun Park, Seungsoo Lee · IEEE INFOCOM · 2025</span>
+              </li>
+              <li>
+                <span class="tag">Journal</span>
+                <span class="ptitle">Exploring Security Enhancements in Kubernetes CNI: A Deep Dive into Network Policies</span><br/>
+                <span class="pmeta"><b>Bom Kim</b>, Jinwoo Kim, Seungsoo Lee · IEEE Access · 2025</span>
+              </li>
+              <li>
+                <span class="tag">Journal</span>
+                <span class="ptitle">KubeAegis: A Unified Security Policy Management Framework for Containerized Environments</span><br/>
+                <span class="pmeta"><b>Bom Kim</b>, Seungsoo Lee · IEEE Access · 2024</span>
+              </li>
+            </ol>
+          </div>
+
+          <div class="pubgroup" style="margin-top:12px;">
+            <div class="pubgroup-title">Domestic</div>
+            <ol class="pub">
+              <li>
+                <span class="tag">Journal</span>
+                <span class="ptitle">Kunerva+: An Intelligent Network Policy Generation Framework for Cloud Native Environments</span><br/>
+                <span class="pmeta"><b>Bom Kim</b>, Seungsoo Lee · Journal of The Korea Institute of Information Security and Cryptology · 2024</span>
+              </li>
+              <li>
+                <span class="tag">Conference</span>
+                <span class="ptitle">Kunerva+: An Intelligent Security Policy Generation Framework for Containers</span><br/>
+                <span class="pmeta"><b>Bom Kim</b>, Yujeong Choi, Seungsoo Lee · KIISC Summer Conference · 2024</span>
+              </li>
+              <li>
+                <span class="tag">Conference</span>
+                <span class="ptitle">IntentShield: An Intent-Powered Security Policy Operator Framework for Kubernetes</span><br/>
+                <span class="pmeta"><b>Bom Kim</b>, Seungsoo Lee · KIISC Winter Conference · 2023</span>
+              </li>
+              <li>
+                <span class="tag">Journal</span>
+                <span class="ptitle">Analysis of Network Security Policy Enforcement in Container Environments</span><br/>
+                <span class="pmeta"><b>Bom Kim</b>, Seungsoo Lee · Journal of The Korea Institute of Information Security and Cryptology · 2023</span>
+              </li>
+            </ol>
+          </div>
+        </section>
+
+        <section id="contact" class="section">
+          <div class="h2line"><h2>Contact</h2><div class="rule"></div></div>
+          <ul class="list" style="margin-top:0;">
+            <li>Email: <a class="link" href="mailto:spring@kaist.ac.kr">spring@kaist.ac.kr</a></li>
+            <li>Lab: <a class="link" href="https://nss.kaist.ac.kr/" target="_blank" rel="noreferrer">https://nss.kaist.ac.kr/</a></li>
+            <li>GitHub: <a class="link" href="https://github.com/b0mkim" target="_blank" rel="noreferrer">https://github.com/b0mkim</a></li>
+            <li>LinkedIn: <a class="link" href="https://www.linkedin.com/in/b0mkim/" target="_blank" rel="noreferrer">https://www.linkedin.com/in/b0mkim/</a></li>
+          </ul>
+        </section>
+
+        <footer>
+          Updated: 2026-02-19
+        </footer>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
